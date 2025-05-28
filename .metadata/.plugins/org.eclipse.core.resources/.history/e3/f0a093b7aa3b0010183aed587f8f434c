@@ -1,0 +1,239 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Hotel Management System</title>
+    <link rel="stylesheet" type="text/css" href="css/enhanced_style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Luxury Hotel Management</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.jsp" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="addReservation"><i class="fas fa-calendar-plus"></i> Add Reservation</a></li>
+                    <li><a href="displayReservations"><i class="fas fa-list"></i> View Reservations</a></li>
+                    <li><a href="reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="welcome-section">
+                <h2>Welcome to Luxury Hotel Management System</h2>
+                <p class="welcome-message">
+                    Experience the ultimate in hotel management efficiency. Our comprehensive system allows you to manage reservations, 
+                    track room availability, generate reports, and provide exceptional service to your guests.
+                </p>
+                
+                <c:if test="${not empty successMessage}">
+                    <p class="message success-message"><c:out value="${successMessage}"/></p>
+                </c:if>
+                <c:if test="${not empty errorMessage}">
+                    <p class="message error-message"><c:out value="${errorMessage}"/></p>
+                </c:if>
+                
+                <div class="cta-buttons">
+                    <a href="addReservation" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> New Reservation</a>
+                    <a href="displayReservations" class="btn btn-secondary"><i class="fas fa-list"></i> View All Reservations</a>
+                </div>
+            </section>
+            
+            <!-- Hotel Image Showcase with Automatic Slideshow -->
+            <div class="hotel-showcase">
+                <div class="showcase-slide active"></div>
+                <div class="showcase-slide"></div>
+                <div class="showcase-slide"></div>
+                <div class="showcase-caption">Experience luxury at its finest</div>
+            </div>
+            
+            <!-- Features Section -->
+            <section class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Reservation Management</h3>
+                    <p>Easily create, update, and cancel reservations with our intuitive interface.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bed"></i></div>
+                    <h3>Room Availability</h3>
+                    <p>Real-time tracking of room availability to maximize occupancy rates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Comprehensive Reports</h3>
+                    <p>Generate detailed reports on occupancy, revenue, and guest statistics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h3>Guest Services</h3>
+                    <p>Track guest preferences and special requests to enhance their experience.</p>
+                </div>
+            </section>
+            
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-number" id="roomCount">120</span>
+                    <span class="stat-label">Luxury Rooms</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="guestCount">1500+</span>
+                    <span class="stat-label">Happy Guests</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="staffCount">50</span>
+                    <span class="stat-label">Staff Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="ratingCount">4.9</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+            </section>
+            
+            <!-- Testimonials Section -->
+            <section class="testimonials">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-container">
+                    <div class="testimonial-slide active">
+                        <p class="testimonial-text">This hotel management system has revolutionized our operations. We've seen a 30% increase in efficiency since implementation.</p>
+                        <p class="testimonial-author">John Doe</p>
+                        <p class="testimonial-role">Hotel Manager, Grand Plaza</p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p class="testimonial-text">The reporting features are exceptional. I can now make data-driven decisions that have improved our revenue by 25%.</p>
+                        <p class="testimonial-author">Jane Smith</p>
+                        <p class="testimonial-role">Director of Operations, Seaside Resort</p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p class="testimonial-text">The intuitive interface made training our staff a breeze. Everyone adapted to the system within days.</p>
+                        <p class="testimonial-author">Robert Johnson</p>
+                        <p class="testimonial-role">HR Director, Mountain View Hotel</p>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <span class="dot active" onclick="currentTestimonial(0)"></span>
+                    <span class="dot" onclick="currentTestimonial(1)"></span>
+                    <span class="dot" onclick="currentTestimonial(2)"></span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Luxury Hotel Management System | Designed for exceptional service</p>
+        </footer>
+    </div>
+    
+    <!-- JavaScript for interactive elements -->
+    <script>
+        // Slideshow functionality for hotel showcase
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.showcase-slide');
+        
+        function showSlide(n) {
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            // Show the selected slide
+            slides[n].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Testimonial slider functionality
+        let currentTestimonialIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+        
+        function currentTestimonial(n) {
+            showTestimonial(currentTestimonialIndex = n);
+        }
+        
+        function showTestimonial(n) {
+            // Hide all testimonials
+            for (let i = 0; i < testimonials.length; i++) {
+                testimonials[i].classList.remove('active');
+                dots[i].classList.remove('active');
+            }
+            // Show the selected testimonial
+            testimonials[n].classList.add('active');
+            dots[n].classList.add('active');
+        }
+        
+        function nextTestimonial() {
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+            showTestimonial(currentTestimonialIndex);
+        }
+        
+        // Auto-advance testimonials every 8 seconds
+        setInterval(nextTestimonial, 8000);
+        
+        // Animate stats counting up
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            const targetValues = [120, 1500, 50, 4.9]; // Target values for each stat
+            const duration = 2000; // Animation duration in milliseconds
+            const frameDuration = 1000 / 60; // 60fps
+            const totalFrames = Math.round(duration / frameDuration);
+            
+            stats.forEach((stat, index) => {
+                let frame = 0;
+                const target = targetValues[index];
+                const initialValue = 0;
+                const increment = (target - initialValue) / totalFrames;
+                
+                const counter = setInterval(() => {
+                    frame++;
+                    const value = initialValue + (increment * frame);
+                    
+                    if (index === 3) { // For the rating which is a decimal
+                        stat.textContent = value.toFixed(1);
+                    } else {
+                        stat.textContent = Math.floor(value);
+                        if (index === 1 && frame === totalFrames) stat.textContent += '+'; // Add + back to 1500+
+                    }
+                    
+                    if (frame === totalFrames) {
+                        clearInterval(counter);
+                    }
+                }, frameDuration);
+            });
+        }
+        
+        // Run animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start with first slide
+            showSlide(0);
+            
+            // Start with first testimonial
+            showTestimonial(0);
+            
+            // Animate stats
+            animateStats();
+            
+            // Add smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

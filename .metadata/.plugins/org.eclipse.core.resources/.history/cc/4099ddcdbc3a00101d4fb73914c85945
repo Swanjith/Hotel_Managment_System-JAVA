@@ -1,0 +1,35 @@
+<%@ page import="com.hotelapp.model.Reservation" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.math.BigDecimal" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Reservation Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%
+        Reservation reservation = new Reservation(
+            1,
+            "John Doe",
+            "101",
+            LocalDate.of(2025, 6, 10),
+            LocalDate.of(2025, 6, 15),
+            new BigDecimal("599.99")
+        );
+        request.setAttribute("reservation", reservation);
+    %>
+
+    <div class="container">
+        <h1>Hotel Reservation</h1>
+        <div class="card">
+            <p><strong>Reservation ID:</strong> ${reservation.reservationID}</p>
+            <p><strong>Customer Name:</strong> ${reservation.customerName}</p>
+            <p><strong>Room Number:</strong> ${reservation.roomNumber}</p>
+            <p><strong>Check-In Date:</strong> ${reservation.checkInDate}</p>
+            <p><strong>Check-Out Date:</strong> ${reservation.checkOutDate}</p>
+            <p><strong>Total Amount:</strong> $${reservation.totalAmount}</p>
+        </div>
+    </div>
+</body>
+</html>

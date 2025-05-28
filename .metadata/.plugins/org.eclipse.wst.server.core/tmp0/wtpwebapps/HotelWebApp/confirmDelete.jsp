@@ -1,0 +1,77 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Deletion</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hotel Reservation Management</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="addReservation">Add Reservation</a></li>
+                    <li><a href="displayReservations">View Reservations</a></li>
+                    <li><a href="reports">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Confirm Deletion</h2>
+
+            <c:if test="${not empty reservationToDelete}">
+                <p>Are you sure you want to delete the following reservation?</p>
+                <table class="styled-table confirmation-table">
+                    <tr>
+                        <th>Reservation ID:</th>
+                        <td><c:out value="${reservationToDelete.reservationID}"/></td>
+                    </tr>
+                    <tr>
+                        <th>Customer Name:</th>
+                        <td><c:out value="${reservationToDelete.customerName}"/></td>
+                    </tr>
+                    <tr>
+                        <th>Room Number:</th>
+                        <td><c:out value="${reservationToDelete.roomNumber}"/></td>
+                    </tr>
+                    <tr>
+                        <th>Check-In Date:</th>
+                        <td><fmt:formatDate value="${reservationToDelete.checkInDate}" pattern="yyyy-MM-dd"/></td>
+                    </tr>
+                    <tr>
+                        <th>Check-Out Date:</th>
+                        <td><fmt:formatDate value="${reservationToDelete.checkOutDate}" pattern="yyyy-MM-dd"/></td>
+                    </tr>
+                    <tr>
+                        <th>Total Amount:</th>
+                        <td><fmt:formatNumber value="${reservationToDelete.totalAmount}" type="currency" currencySymbol="$"/></td>
+                    </tr>
+                </table>
+                
+                <form action="deleteReservation" method="post" class="styled-form">
+                    <input type="hidden" name="reservationID" value="<c:out value=\" ${reservationToDelete.reservationID}\"/>">
+                    <button type="submit" class="button-danger">Yes, Delete</button>
+                    <a href="displayReservations" class="button-link">No, Cancel</a>
+                </form>
+                
+            </c:if>
+
+            <c:if test="${empty reservationToDelete}">
+                <p class="message error-message">No reservation selected for deletion, or reservation not found.</p>
+                <p><a href="displayReservations" class="button-link">Back to Reservations List</a></p>
+            </c:if>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Hotel Management System</p>
+        </footer>
+    </div>
+</body>
+</html>

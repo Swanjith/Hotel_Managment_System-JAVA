@@ -1,0 +1,76 @@
+package com.hotelapp.model;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+public class Reservation implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private int reservationID;
+    private String customerName;
+    private String roomNumber;
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
+    private BigDecimal totalAmount;
+
+    public Reservation() {}
+
+    public Reservation(int reservationID, String customerName, String roomNumber,
+                       LocalDate checkInDate, LocalDate checkOutDate, BigDecimal totalAmount) {
+        this.reservationID = reservationID;
+        this.customerName = customerName;
+        this.roomNumber = roomNumber;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.totalAmount = totalAmount;
+    }
+
+    public int getReservationID() {
+        return reservationID;
+    }
+
+    public void setReservationID(int reservationID) {
+        this.reservationID = reservationID;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    public LocalDate getCheckInDate() {
+        return checkInDate;
+    }
+
+    public void setCheckInDate(LocalDate checkInDate) {
+        this.checkInDate = checkInDate;
+    }
+
+    public LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public void setCheckOutDate(LocalDate checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
+
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+}

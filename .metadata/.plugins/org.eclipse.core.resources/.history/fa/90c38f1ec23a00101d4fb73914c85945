@@ -1,0 +1,282 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77aaff 3px solid;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+header nav {
+    text-align: center;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header nav a:hover {
+    color: #77aaff;
+    font-weight: bold;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px 0;
+    background: #fff;
+    min-height: 400px; /* Ensures footer doesn't overlap on short pages */
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+main h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #333;
+}
+
+/* Form Styles */
+.styled-form div {
+    margin-bottom: 15px;
+}
+
+.styled-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.styled-form input[type="text"],
+.styled-form input[type="date"],
+.styled-form input[type="number"],
+.styled-form input[type="password"],
+.styled-form input[type="email"],
+.styled-form select,
+.styled-form textarea {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for width calculation */
+}
+
+.styled-form button[type="submit"],
+.styled-form button[type="reset"],
+.button-link {
+    background: #5cb85c;
+    color: white;
+    border: 0;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.styled-form button[type="reset"] {
+    background: #f0ad4e;
+}
+
+.button-link {
+     display: inline-block; /* To allow padding and margin */
+}
+
+.button-link.edit-link {
+    background: #5bc0de;
+}
+
+.button-link.delete-link, .button-danger {
+    background: #d9534f;
+    color: white; /* Ensure text is visible */
+}
+
+.styled-form button:hover,
+.button-link:hover {
+    opacity: 0.9;
+}
+
+/* Table Styles */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #333;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #77aaff;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #77aaff;
+}
+
+.action-link {
+    margin-right: 8px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Message Styles */
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Report Specific Styles */
+.report-form {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.report-form h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.form-divider {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.report-summary {
+    font-size: 1.1em;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-left: 5px solid #77aaff;
+}
+
+.confirmation-table {
+    margin-bottom: 20px;
+}
+.confirmation-table th {
+    text-align: right;
+    padding-right: 10px;
+    background-color: #f9f9f9;
+}
+.confirmation-table td {
+    text-align: left;
+}
+
+/* Error Page Specifics */
+.error-details {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.error-details h4 {
+    margin-top: 0;
+    color: #856404;
+}
+
+.error-details pre {
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    background: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    max-height: 300px;
+    overflow-y: auto;
+}
+

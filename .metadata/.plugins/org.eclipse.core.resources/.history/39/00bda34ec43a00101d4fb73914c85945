@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Reservation System</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hotel Reservation Management</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="addReservation">Add Reservation</a></li>
+                    <li><a href="displayReservations">View Reservations</a></li>
+                    <li><a href="reports">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Welcome to the Hotel Reservation System</h2>
+            <p>Use the navigation menu to manage reservations and view reports.</p>
+            
+            <c:if test="${not empty successMessage}">
+                <p class="message success-message"><c:out value="${successMessage}"/></p>
+            </c:if>
+            <c:if test="${not empty errorMessage}">
+                <p class="message error-message"><c:out value="${errorMessage}"/></p>
+            </c:if>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Hotel Management System</p>
+            <p>By- Swanjith(4AL22CS174)</p>
+        </footer>
+    </div>
+</body>
+</html>

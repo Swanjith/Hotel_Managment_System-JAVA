@@ -84,7 +84,7 @@ This completes the initial setup. Next, we will develop the backend components.
 
 
 
-## Phase 2: Backend Development (Java - MVC Pattern)
+##  Backend Development 
 
 This phase focuses on creating the Java classes that will handle the business logic and data access, following the Model-View-Controller (MVC) pattern.
 

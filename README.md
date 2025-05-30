@@ -1,12 +1,9 @@
-# Advanced Java  
+# Advanced Java :Hotel Management System
 
 **Subject Code**: BCS613D<br>
 **Name** : Swanjith AK<br>
 **USN**: 4AL22CS174<br>
 **Sem/Section**: VI/C<br>
-
-# Hotel Management System: Detailed Step-by-Step Guide
-
 
 
 

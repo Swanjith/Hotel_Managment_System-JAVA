@@ -1,4 +1,14 @@
+# Advanced Java  
+
+**Subject Code**: BCS613D<br>
+**Name** : Swanjith AK<br>
+**USN**: 4AL22CS174<br>
+**Sem/Section**: VI/C<br>
+```
 # Hotel Management System: Detailed Step-by-Step Guide
+
+```
+
 
 This document provides a detailed step-by-step guide to developing the Hotel Management System project using Eclipse IDE, Java, JSP, Servlets, MySQL, and phpMyAdmin.
 

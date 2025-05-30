@@ -153,8 +153,7 @@ Servlets will handle incoming HTTP requests, interact with the DAO, and forward 
 *   **`DisplayReservationsServlet.java`**
     *   Handles displaying all reservations.
     *   **File:** `src/com/hotelapp/servlet/DisplayReservationsServlet.java`
-  sure this file is placed in src/com/hotelapp/servlet/DisplayReservationsServlet.java
-    ```
+  
 *   **`ReportServlet.java`**
     *   Handles generating various reports.
     *   **File:** `src/com/hotelapp/servlet/ReportServlet.java`
@@ -266,20 +265,6 @@ Create the following JSP files directly under the `WebContent` folder.
         *   Generate reports for total revenue over a period.
         *   Test with various date ranges and data to ensure accuracy.
     *   **Navigation and Links:** Ensure all navigation links work correctly.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

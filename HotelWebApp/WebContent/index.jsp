@@ -654,6 +654,7 @@
 
         .button-link.edit-link {
             background: var(--info-color);
+            color:red;
         }
 
         .button-link.delete-link, .button-danger {
@@ -841,7 +842,7 @@
 
         <main>
             <section class="welcome-section">
-                <h2>Welcome to Luxury Hotel Management System</h2>
+                <h2>Welcome to Hotel Management System</h2>
                 <p class="welcome-message">
                     Experience the ultimate in hotel management efficiency. Our comprehensive system allows you to manage reservations, 
                     track room availability, generate reports, and provide exceptional service to your guests.
@@ -918,17 +919,17 @@
                 <div class="testimonial-container">
                     <div class="testimonial-slide active">
                         <p class="testimonial-text">This hotel management system has revolutionized our operations. We've seen a 30% increase in efficiency since implementation.</p>
-                        <p class="testimonial-author">John Doe</p>
+                        <p class="testimonial-author">Anush</p>
                         <p class="testimonial-role">Hotel Manager, Grand Plaza</p>
                     </div>
                     <div class="testimonial-slide">
                         <p class="testimonial-text">The reporting features are exceptional. I can now make data-driven decisions that have improved our revenue by 25%.</p>
-                        <p class="testimonial-author">Jane Smith</p>
+                        <p class="testimonial-author">Deepak</p>
                         <p class="testimonial-role">Director of Operations, Seaside Resort</p>
                     </div>
                     <div class="testimonial-slide">
                         <p class="testimonial-text">The intuitive interface made training our staff a breeze. Everyone adapted to the system within days.</p>
-                        <p class="testimonial-author">Robert Johnson</p>
+                        <p class="testimonial-author">Sakshi</p>
                         <p class="testimonial-role">HR Director, Mountain View Hotel</p>
                     </div>
                 </div>
@@ -941,7 +942,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 Luxury Hotel Management System | Designed for exceptional service</p>
+            <p>&copy; Hotel Management System |Swanjith(4AL22CS174)</p>
         </footer>
     </div>
     

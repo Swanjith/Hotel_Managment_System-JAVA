@@ -86,96 +86,11 @@ HotelWebApp/
     5.  Browse to the directory containing the MySQL JDBC JAR file, select the JAR, and click "Finish". Alternatively, you can copy the JAR file and paste it directly into the `WebContent/WEB-INF/lib` folder in Eclipse's Project Explorer.
     6.  The JAR file should now appear in the `lib` folder. Eclipse will automatically add it to the project's build path.
 
-This completes the initial setup. Next, we will develop the backend components.
+This completes the setup.
 
 
 
 
-##  Backend Development 
-
-This phase focuses on creating the Java classes that will handle the business logic and data access, following the Model-View-Controller (MVC) pattern.
-
-**4. Create Model Class (Java Bean):**
-
-Create the package `com.hotelapp.model` by right-clicking on the `src` folder `New > Package`.
-Then, create the `Reservation.java` class inside this package.
-
-*   **File:** `src/com/hotelapp/model/Reservation.java`
-
-```java
-// Code for Reservation.java (already provided and saved as /home/ubuntu/Reservation.java)
-// Ensure this file is placed in src/com/hotelapp/model/Reservation.java in your Eclipse project.
-```
-*(The content of `Reservation.java` was previously generated and saved to `/home/ubuntu/Reservation.java`. You will need to create this file in your Eclipse project at the specified path and paste the content.)*
-
-**5. Create Data Access Object (DAO) Classes:**
-
-Create the package `com.hotelapp.dao` by right-clicking on the `src` folder `New > Package`.
-
-*   **Database Connection Utility:** `DBConnection.java`
-    *   This class will manage the database connection details.
-    *   **File:** `src/com/hotelapp/dao/DBConnection.java`
-
-    ```java
-    // Code for DBConnection.java (already provided and saved as /home/ubuntu/DBConnection.java)
-    // IMPORTANT: Remember to replace "your_mysql_username" and "your_mysql_password" 
-    // in DBConnection.java with your actual MySQL credentials.
-    // Ensure this file is placed in src/com/hotelapp/dao/DBConnection.java in your Eclipse project.
-    ```
-    *(The content of `DBConnection.java` was previously generated and saved to `/home/ubuntu/DBConnection.java`. Create this file in your Eclipse project at the specified path and paste the content. **Crucially, update the placeholder username and password with your MySQL credentials.**)*
-
-*   **Reservation DAO:** `ReservationDAO.java`
-    *   This class handles all database operations for reservations (CRUD and reports).
-    *   **File:** `src/com/hotelapp/dao/ReservationDAO.java`
-
-    ```java
-    // Code for ReservationDAO.java (already provided and saved as /home/ubuntu/ReservationDAO.java)
-    // Ensure this file is placed in src/com/hotelapp/dao/ReservationDAO.java in your Eclipse project.
-    ```
-    *(The content of `ReservationDAO.java` was previously generated and saved to `/home/ubuntu/ReservationDAO.java`. Create this file in your Eclipse project at the specified path and paste the content.)*
-
-**6. Create Servlet Classes (Controllers):**
-
-Create the package `com.hotelapp.servlet` by right-clicking on the `src` folder `New > Package`.
-Servlets will handle incoming HTTP requests, interact with the DAO, and forward to JSP pages.
-
-*   **`AddReservationServlet.java`**
-    *   Handles adding new reservations.
-    *   **File:** `src/com/hotelapp/servlet/AddReservationServlet.java`
-    ```java
-    // Code for AddReservationServlet.java (already provided and saved as /home/ubuntu/AddReservationServlet.java)
-    // Ensure this file is placed in src/com/hotelapp/servlet/AddReservationServlet.java
-    ```
-*   **`UpdateReservationServlet.java`**
-    *   Handles updating existing reservations.
-    *   **File:** `src/com/hotelapp/servlet/UpdateReservationServlet.java`
-    ```java
-    // Code for UpdateReservationServlet.java (already provided and saved as /home/ubuntu/UpdateReservationServlet.java)
-    // Ensure this file is placed in src/com/hotelapp/servlet/UpdateReservationServlet.java
-    ```
-*   **`DeleteReservationServlet.java`**
-    *   Handles deleting reservations.
-    *   **File:** `src/com/hotelapp/servlet/DeleteReservationServlet.java`
-    ```java
-    // Code for DeleteReservationServlet.java (already provided and saved as /home/ubuntu/DeleteReservationServlet.java)
-    // Ensure this file is placed in src/com/hotelapp/servlet/DeleteReservationServlet.java
-    ```
-*   **`DisplayReservationsServlet.java`**
-    *   Handles displaying all reservations.
-    *   **File:** `src/com/hotelapp/servlet/DisplayReservationsServlet.java`
-    ```java
-    // Code for DisplayReservationsServlet.java (already provided and saved as /home/ubuntu/DisplayReservationsServlet.java)
-    // Ensure this file is placed in src/com/hotelapp/servlet/DisplayReservationsServlet.java
-    ```
-*   **`ReportServlet.java`**
-    *   Handles generating various reports.
-    *   **File:** `src/com/hotelapp/servlet/ReportServlet.java`
-    ```java
-    // Code for ReportServlet.java (already provided and saved as /home/ubuntu/ReportServlet.java)
-    // Ensure this file is placed in src/com/hotelapp/servlet/ReportServlet.java
-    ```
-
-*(The content for each servlet was previously generated and saved to its respective `.java` file in `/home/ubuntu/`. You will need to create these files in your Eclipse project under the `src/com/hotelapp/servlet/` package and paste the corresponding content.)*
 
 
 
